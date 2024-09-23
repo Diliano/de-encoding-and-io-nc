@@ -1,4 +1,5 @@
 import yaml
+import json
 
 with open("./data/people.yml", encoding="utf-16") as f:
     data = yaml.safe_load(f)
@@ -31,3 +32,8 @@ def calculate_average_age():
     return sum(valid_ages) // len(valid_ages)
 
 # print(calculate_average_age())
+
+def get_list_of_dicts():
+    return data["people"]
+
+# print(get_list_of_dicts())
