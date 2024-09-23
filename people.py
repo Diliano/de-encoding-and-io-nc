@@ -42,3 +42,12 @@ def get_people_who_like_tombolas():
     return [person for person in data["people"] if "Tombolas" in person["interests"]]    
 
 # print(get_people_who_like_tombolas())
+
+def add_person_to_yaml_file(person_to_add):
+    data["people"].append(person_to_add)
+    with open("./data/people.yml", "w", encoding="utf-16") as f:
+        yaml.dump(data, f)
+
+# person_to_add = {"name": 'test', 'age': 30, 'job': 'test', 'interests': ['test'], 'wants': ['test'], 'location': 'test', 'favorite song': "test", 'favorite movie': "test"}
+
+# add_person_to_yaml_file(person_to_add)
