@@ -18,3 +18,16 @@ def get_interests(name):
             return person["interests"]
         
 # print(get_interests("Craig"))
+
+def calculate_average_age():
+    """
+    Considers integer values as valid ages
+
+    Calculates average based on valid ages and their respective person
+
+    Returns an integer
+    """
+    valid_ages = [person["age"] for person in data["people"] if isinstance(person["age"], int)]
+    return sum(valid_ages) // len(valid_ages)
+
+# print(calculate_average_age())
