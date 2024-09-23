@@ -6,7 +6,7 @@ def csv_to_dict(filepath):
         return list(reader)
     
 pizza_dicts = csv_to_dict("./data/pizza.csv")
-print(pizza_dicts)
+# print(pizza_dicts)
 
 def get_ingredients(list_of_pizza_dicts, pizza):
     for pizza_dict in list_of_pizza_dicts:
@@ -14,10 +14,18 @@ def get_ingredients(list_of_pizza_dicts, pizza):
             return pizza_dict["Description"].split(", ")
         
 capri_ingredients = get_ingredients(pizza_dicts, "Capri")
-print(capri_ingredients)
+# print(capri_ingredients)
 
 def get_pizzas_under_9(list_of_pizza_dicts):
     pizzas_under_9 = [pizza_dict for pizza_dict in list_of_pizza_dicts if float(pizza_dict["Cost"][1:]) < 9]
     return sorted(pizzas_under_9, key=lambda x: float(x["Cost"][1:]))
 
-print(len(get_pizzas_under_9(pizza_dicts)))
+# print(get_pizzas_under_9(pizza_dicts))
+
+def write_pizza_to_file(filepath, pizza_to_add):
+    with open(filepath, "a", encoding="utf-8") as f:
+        fieldnames = ["Pizza", "Cost", "Description", "Calories"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writerow(pizza_to_add)
+
+# write_pizza_to_file("./data/pizza.csv", {"Pizza": "Pepperoni", "Cost": "£6.50", "Description": "Vegan cheese, vegan pepperoni, mushroom, sweetcorn", "Calories": "710kcal"})
