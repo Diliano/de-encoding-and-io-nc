@@ -1,7 +1,7 @@
 import csv
 
-def csv_to_dict(filepath, encoding="utf-8"):
-    with open(filepath) as f:
+def csv_to_dict(filepath):
+    with open(filepath, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         return list(reader)
     
