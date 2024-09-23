@@ -34,3 +34,14 @@ def add_car_to_data(filepath, car_to_add):
 #     "colour": "Black"
 # }
 # add_car_to_data("./data/cars.json", car_to_be_added)
+
+def update_year(filepath, vin, year):
+    with open(filepath, "r+", encoding="utf-8") as f:
+        read_f = json.load(f)
+        for car_dict in read_f["Cars"]:
+            if car_dict["vin"] == vin:
+                car_dict["year"] = year
+        f.seek(0)
+        json.dump(read_f, f, indent=4)
+
+# update_year("./data/cars.json", "WVGAV3AX5EW889767", 1985)
