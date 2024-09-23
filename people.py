@@ -59,3 +59,12 @@ def add_fav_colour_key_to_data():
         yaml.dump(data, f)
 
 # add_fav_colour_key_to_data()
+
+def rewrite_london_as_the_city():
+    for person in data["people"]:
+        if person["location"] == "London":
+            person["location"] = "The City"
+    with open("./data/people.yml", "w", encoding="utf-16") as f:
+        yaml.dump(data, f)
+
+# rewrite_london_as_the_city()
