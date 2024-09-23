@@ -51,3 +51,11 @@ def add_person_to_yaml_file(person_to_add):
 # person_to_add = {"name": 'test', 'age': 30, 'job': 'test', 'interests': ['test'], 'wants': ['test'], 'location': 'test', 'favorite song': "test", 'favorite movie': "test"}
 
 # add_person_to_yaml_file(person_to_add)
+
+def add_fav_colour_key_to_data():
+    for person in data["people"]:
+        person["fav_colour"] = None
+    with open("./data/people.yml", "w", encoding="utf-16") as f:
+        yaml.dump(data, f)
+
+# add_fav_colour_key_to_data()
