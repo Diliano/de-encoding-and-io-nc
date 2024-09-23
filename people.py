@@ -37,3 +37,8 @@ def get_list_of_dicts():
     return data["people"]
 
 # print(get_list_of_dicts())
+
+def get_people_who_like_tombolas():
+    return [person for person in data["people"] if "Tombolas" in person["interests"]]    
+
+# print(get_people_who_like_tombolas())
