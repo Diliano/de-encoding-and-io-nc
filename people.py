@@ -11,3 +11,10 @@ def get_job(name):
             return person["job"]
         
 # print(get_job("Craig"))
+
+def get_interests(name):
+    for person in data["people"]:
+        if person["name"] == name:
+            return person["interests"]
+        
+# print(get_interests("Craig"))
