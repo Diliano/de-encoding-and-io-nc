@@ -7,7 +7,7 @@ def json_to_list_of_dicts(filepath):
 car_data = json_to_list_of_dicts("./data/cars.json")
 # print(car_data)
 
-def find_car_makes(car_data):
+def get_car_makes(car_data):
     return {car_dict["make"] for car_dict in car_data}
 
-# print(find_car_makes(car_data))
+# print(get_car_makes(car_data))
