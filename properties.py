@@ -13,4 +13,12 @@ def get_cost_of_largest_detached_home_for_sale():
                 result.append((sq_ft, price))
     return sorted(result)[-1][1]
 
-print(get_cost_of_largest_detached_home_for_sale())
+# print(get_cost_of_largest_detached_home_for_sale())
+
+def get_description_of_third_home_from_bungalows_for_sale():
+    for sale in root.findall("sale"):
+        for bungalow in sale.findall("bungalow"):
+            for home in bungalow.findall("home3"):
+                return home.find("description").text
+            
+# print(get_description_of_third_home_from_bungalows_for_sale())
