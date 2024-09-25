@@ -23,11 +23,6 @@ def get_description_of_third_home_from_bungalows_for_sale():
             
 # print(get_description_of_third_home_from_bungalows_for_sale())
 
-"""
-Create a function that returns the number of bathrooms that
-the first flat for rent has.
-"""
-
 def get_num_bathrooms_of_first_flat_for_rent():
     for sale in root.findall("rent"):
         for flat in sale.findall("flat"):
@@ -35,3 +30,30 @@ def get_num_bathrooms_of_first_flat_for_rent():
                 return int(flat.find("bathrooms").text)
             
 # print(get_num_bathrooms_of_first_flat_for_rent())
+
+def get_list_of_all_bungalows():
+    result = []
+    for sale in root.findall("sale"):
+        for bungalow in sale.findall("bungalow"):
+            for home in bungalow:
+                result.append({
+                    home.find("cost").tag: home.find("cost").text,
+                    home.find("description").tag: home.find("description").text,
+                    home.find("bedrooms").tag: home.find("bedrooms").text,
+                    home.find("bathrooms").tag: home.find("bathrooms").text,
+                    home.find("plot_size").tag: home.find("plot_size").text,
+                })
+
+    for rent in root.findall("rent"):
+        for bungalow in rent.findall("bungalow"):
+            for home in bungalow:
+                result.append({
+                    home.find("cost").tag: home.find("cost").text,
+                    home.find("description").tag: home.find("description").text,
+                    home.find("bedrooms").tag: home.find("bedrooms").text,
+                    home.find("bathrooms").tag: home.find("bathrooms").text
+                })
+                
+    return result
+
+# print(get_list_of_all_bungalows())
