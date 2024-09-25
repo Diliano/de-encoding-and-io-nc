@@ -22,3 +22,16 @@ def get_description_of_third_home_from_bungalows_for_sale():
                 return home.find("description").text
             
 # print(get_description_of_third_home_from_bungalows_for_sale())
+
+"""
+Create a function that returns the number of bathrooms that
+the first flat for rent has.
+"""
+
+def get_num_bathrooms_of_first_flat_for_rent():
+    for sale in root.findall("rent"):
+        for flat in sale.findall("flat"):
+            for flat in flat.findall("flat1"):
+                return int(flat.find("bathrooms").text)
+            
+# print(get_num_bathrooms_of_first_flat_for_rent())
