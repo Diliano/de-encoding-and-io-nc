@@ -1,3 +1,5 @@
-# Encoding and IO
+# Data Engineering Bootcamp - Encoding & IO
 
-Instructions for today's sprint can be found at: [https://l2c.northcoders.com/courses/de2-fun/io-tasks](https://l2c.northcoders.com/courses/de2-fun/io-tasks)
+## Overview
+
+This repository contains work completed as part of the Encoding & IO Sprint during my Data Engineering Bootcamp. 
